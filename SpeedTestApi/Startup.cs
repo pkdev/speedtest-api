@@ -28,7 +28,7 @@ namespace SpeedTestApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var connectionString = Configuration.GetValue<string>("EventHub:ConnectionString");
+            var connectionString = Configuration.GetValue<string>("EventHub:Connect ionString");
             var entityPath = Configuration.GetValue<string>("EventHub:EntityPath");
             services.AddScoped<ISpeedTestEvents, SpeedTestEvents>(cts =>
             {
