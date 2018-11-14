@@ -28,7 +28,7 @@ namespace SpeedTestApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var connectionString = Configuration.GetValue<string>("EventHub:Connect ionString");
+            var connectionString = Configuration.GetValue<string>("EventHub:ConnectionString");
             var entityPath = Configuration.GetValue<string>("EventHub:EntityPath");
             services.AddScoped<ISpeedTestEvents, SpeedTestEvents>(cts =>
             {
@@ -36,7 +36,7 @@ namespace SpeedTestApi
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // This method gets called by the runtime. Use this method to configure  the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
